@@ -7,7 +7,7 @@ import defaultStyled, {
 } from 'styled-components';
 
 const colors: IColorTheme = {
-  red100: 'blue',
+  red100: 'red',
 };
 
 const screens: IScreenTheme = {
@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  #root {
+  #___gatsby, #gatsby-focus-wrapper {
     display: grid;
     height: 100vh;
   }
