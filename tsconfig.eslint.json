@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.test.ts", "./custom.d.ts", "./WrapRootElement.jsx"],
+  "exclude": ["./node_modules", "./build", "__snapshots__", "./jest.config.ts"]
+}
