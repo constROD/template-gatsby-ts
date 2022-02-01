@@ -8,6 +8,8 @@
     "plugin:@typescript-eslint/recommended",
     "airbnb-typescript",
     "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
     "prettier"
@@ -33,10 +35,11 @@
     "sourceType": "module",
     "project": ["./tsconfig.eslint.json"]
   },
-  "plugins": ["react", "@typescript-eslint", "jest", "import"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "jest", "import"],
   "rules": {
     "linebreak-style": "off",
     "no-undef": "error",
+    "no-console": "warn",
     "prefer-default-export": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
