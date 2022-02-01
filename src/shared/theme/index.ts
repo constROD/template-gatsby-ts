@@ -15,6 +15,7 @@ const screens: IScreenTheme = {
   bpMedium: '768px',
   bpLarge: '992px',
   bpXlarge: '1200px',
+  bpXXlarge: '1920px',
 };
 
 export const theme = (): ITheme => ({ colors, screens });

@@ -7,6 +7,7 @@ export interface IScreenTheme {
   bpMedium: string;
   bpLarge: string;
   bpXlarge: string;
+  bpXXlarge: string;
 }
 
 export interface ITheme {

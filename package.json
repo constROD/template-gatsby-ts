@@ -1,12 +1,19 @@
 {
-  "name": "template-gatsby-type-script",
+  "name": "template-gatsby-typescript",
   "version": "1.0.0",
-  "private": true,
-  "description": "Template Gatsby TypeScript",
-  "author": "Rodrick",
-  "keywords": [
-    "gatsby"
+  "repository": "https://github.com/constrod/template-gatsby-typescript",
+  "bugs": {
+    "url": "https://github.com/constrod/template-gatsby-typescript/issues"
+  },
+  "contributors": [
+    {
+      "name": "Rodrick Alcantara",
+      "url": "https://github.com/constROD"
+    }
   ],
+  "description": "Custom Template for Gatsby TypeScript",
+  "author": "Rodrick Alcantara <rialcantara21@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
     "start": "gatsby develop",
@@ -28,6 +35,8 @@
     "react-redux": "^7.2.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.4.0",
@@ -57,5 +66,10 @@
     "prettier": "^2.5.1",
     "styled-components": "^5.3.3",
     "typescript": "^4.5.5"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix"
+    ]
   }
 }
