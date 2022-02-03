@@ -26,7 +26,7 @@
 $ yarn
 ```
 
-- Create `.env` file for environment variables. `.env-sample` are the required environment variables.
+- Create `.env.development` file for environment variables. `.env-sample` are the required environment variables.
 - Run in **development** mode.
 
 ```bash
@@ -36,7 +36,7 @@ $ yarn dev
 ## Run in **production** mode.
 
 - **without Docker:**
-
+- Create `.env.production` file for environment variables.
 - Build the application.
 
 ```bash
