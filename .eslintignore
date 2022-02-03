@@ -1,16 +1,40 @@
-node_modules/
-build/
-commitlint.config.js
-bin
-coverage/
-jest.*.ts
-.env
-.eslintcache
-.vscode
-*-error.log
+# Dependencies
+/node_modules
 
-global.d.ts
+# Configs
+/commitlint.config.js
+/jest.*.ts
+/Dockerfile
+/gatsby-config.js
+/gatsby-browser.js
+/gatsby-ssr.js
 
-gatsby-config.js
-gatsby-browser.js
-gatsby-ssr.js
+# Caches
+/.eslintcache
+/.vscode
+/.cache
+
+# Testings
+/coverage
+
+# Builds
+/build
+
+# Miscellaneous
+/.DS_Store
+/.env
+/.env.development
+/.env.test
+/.env.production
+
+# Logs
+/*-error.log
+/*-debug.log
+
+# Types
+/custom.d.ts
+
+# Ignores
+/.dockerignore
+/.prettierignore
+/.eslintignore

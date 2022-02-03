@@ -1,9 +1,10 @@
 # Dependencies
 /node_modules
-/public
 
 # Configs
 /commitlint.config.js
+/jest.*.ts
+/Dockerfile
 
 # Caches
 /.eslintcache
@@ -28,5 +29,9 @@
 /*-debug.log
 
 # Types
+/custom.d.ts
 
 # Ignores
+/.dockerignore
+/.prettierignore
+/.eslintignore

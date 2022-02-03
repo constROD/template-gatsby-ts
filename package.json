@@ -34,7 +34,9 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.6",
-    "react-use": "^17.3.2"
+    "react-use": "^17.3.2",
+    "redux-logger": "^3.0.6",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
@@ -67,8 +69,6 @@
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "prettier": "^2.5.1",
-    "redux-logger": "^3.0.6",
-    "styled-components": "^5.3.3",
     "typescript": "^4.5.5"
   },
   "lint-staged": {
