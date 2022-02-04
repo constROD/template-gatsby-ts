@@ -60,12 +60,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.13.0
+        env:
+          SUB_DOMAIN: ${{ github.base_ref }}__${{ github.head_ref }}
       - run: |
           npm install --global surge
           yarn
           yarn build
-          surge ./public ${{ github.head_ref }}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-          echo "Deployed Link: https://${{ github.head_ref }}.surge.sh"
+          surge ./public $SUB_DOMAIN.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          echo "Deployed Link: https://$SUB_DOMAIN.surge.sh"
 
   # notification-done:
   #   runs-on: ubuntu-latest
@@ -77,7 +79,7 @@ jobs:
   #         status: custom
   #         custom_payload: |
   #           {
-  #             text: '(QA): `${{ github.head_ref }}` is now deployed. Preview: https://${{ github.head_ref }}.surge.sh'
+  #             text: '(QA): `${{ github.head_ref }}` is now deployed. Preview: https://${{ github.base_ref }}__${{ github.head_ref }}.surge.sh'
   #           }
   #       env:
   #         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
