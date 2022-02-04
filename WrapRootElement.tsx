@@ -5,8 +5,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 export default ({ element }) => {
+  const store = createStore();
+
   return (
-    <Provider store={createStore()}>
+    <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {element}
