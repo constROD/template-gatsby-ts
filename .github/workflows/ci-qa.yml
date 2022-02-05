@@ -7,7 +7,8 @@ on:
       - 'release'
 
 env:
-  GIT_BRANCH_NAME: ${{ github.head_ref }}
+  GIT_HEAD_BRANCH: ${{ github.head_ref }}
+  GIT_BASE_BRANCH: ${{ github.base_ref }}
   GIT_PR_URL: https://github.com/nyfulcrum/symple-app-store-react/pull/${{ github.event.pull_request.number }}
   PREVIEW_URL: https://${{ github.base_ref }}__${{ github.head_ref }}.surge.sh
 
@@ -24,7 +25,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":large_orange_circle: `${{ env.GIT_BRANCH_NAME }}` branch is now deploying for `QA`."
+                    "text": ":large_orange_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` branch is now deploying for `QA`."
                   }
                 },
                 { "type": "divider" },
@@ -68,7 +69,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":red_circle: `${{ env.GIT_BRANCH_NAME }}` branch encountered an error while linting."
+                    "text": ":red_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` branch encountered an error while linting."
                   }
                 },
                 { "type": "divider" },
@@ -116,7 +117,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":red_circle: `${{ env.GIT_BRANCH_NAME }}` branch encountered an error while testing."
+                    "text": ":red_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` branch encountered an error while testing."
                   }
                 },
                 { "type": "divider" },
@@ -166,7 +167,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":red_circle: `${{ env.GIT_BRANCH_NAME }}` branch encountered an error while deploying."
+                    "text": ":red_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` branch encountered an error while deploying."
                   }
                 },
                 { "type": "divider" },
@@ -199,7 +200,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":large_green_circle: `${{ env.GIT_BRANCH_NAME }}` branch is now deployed for `QA`."
+                    "text": ":large_green_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` branch is now deployed for `QA`."
                   }
                 },
                 { "type": "divider" },
