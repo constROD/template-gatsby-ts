@@ -1,11 +1,15 @@
-import AuthenticatedRoute from 'components/AuthenticatedRoute';
+import { NotFoundPageWrapper } from './404.styled';
+
+import { navigate } from 'gatsby';
 import React from 'react';
+import { ROUTES } from 'shared/constants/Routes';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <AuthenticatedRoute>
-      <div>404 Not Found</div>
-    </AuthenticatedRoute>
+    <NotFoundPageWrapper>
+      <span>Sorry, the page you visited does not exist.</span>
+      <button onClick={() => navigate(ROUTES.HOME)}>Back Home</button>
+    </NotFoundPageWrapper>
   );
 };
 

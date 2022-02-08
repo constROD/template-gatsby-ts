@@ -1,13 +1,13 @@
+import About from 'components/About/About';
 import AuthenticatedRoute from 'components/AuthenticatedRoute';
-import Home from 'components/Home/Home';
 import React from 'react';
 
-const HomePage: React.FC = () => {
+const AboutPage: React.FC = () => {
   return (
     <AuthenticatedRoute>
-      <Home />
+      <About />
     </AuthenticatedRoute>
   );
 };
 
-export default HomePage;
+export default AboutPage;

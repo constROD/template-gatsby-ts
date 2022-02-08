@@ -1,17 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { PageProps } from 'gatsby';
+import { navigate } from 'gatsby';
 import React from 'react';
+import { ROUTES } from 'shared/constants/Routes';
+import { useAppSelector } from 'shared/hooks/useRedux';
 
-const AuthenticatedRoute: React.FC<any> = ({ children }: PageProps) => {
-  // const isAuth = useAppSelector(state => state.user.isAuth);
-  // const profile = useAppSelector(state => state.user.profile);
-  // const { setHostName, getAllInfo } = UserActions();
+const AuthenticatedRoute: React.FC = ({ children }) => {
+  const isAuth = useAppSelector(state => state.user.isAuth);
 
-  // const queryParam = new URLSearchParams(location.search);
-
-  // const code = queryParam.get('code')
-
-  // const run = useRef(true);
+  if (!isAuth) {
+    navigate(ROUTES.LOGIN);
+    return null;
+  }
 
   // useEffectOnce(() => {
   //   if (!LocalStorageUtil.get(AppLocalStorage.HostName)) {
