@@ -2,7 +2,7 @@
 import { PageProps } from 'gatsby';
 import React from 'react';
 
-const PageWrapper: React.FC<any> = ({ children }: PageProps) => {
+const AuthenticatedRoute: React.FC<any> = ({ children }: PageProps) => {
   // const isAuth = useAppSelector(state => state.user.isAuth);
   // const profile = useAppSelector(state => state.user.profile);
   // const { setHostName, getAllInfo } = UserActions();
@@ -32,4 +32,4 @@ const PageWrapper: React.FC<any> = ({ children }: PageProps) => {
   return <React.Fragment>{children}</React.Fragment>;
 };
 
-export default PageWrapper;
+export default AuthenticatedRoute;
