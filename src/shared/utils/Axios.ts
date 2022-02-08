@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-
 import LocalStorageUtil from './LocalStorage';
 
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
