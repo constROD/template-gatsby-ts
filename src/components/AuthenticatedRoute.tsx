@@ -24,7 +24,7 @@ const PageWrapper: React.FC<any> = ({ children }: PageProps) => {
 
   // useEffect(() => {
   //   if (run.current && isAuth && !profile) {
-  //     // getAllInfo();
+  //     getAllInfo();
   //     run.current = false;
   //   }
   // }, [getAllInfo, isAuth, profile]);

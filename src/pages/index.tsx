@@ -1,12 +1,12 @@
+import AuthenticatedRoute from 'components/AuthenticatedRoute';
 import Home from 'components/Home/Home';
-import Layout from 'components/Layout';
 import React from 'react';
 
 const IndexPage: React.FC = () => {
   return (
-    <Layout>
+    <AuthenticatedRoute>
       <Home />
-    </Layout>
+    </AuthenticatedRoute>
   );
 };
 
