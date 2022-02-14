@@ -58,8 +58,8 @@ jobs:
         run: |
           echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
           echo 'always-auth=true' >> .npmrc
-          echo SKIP_PREFLIGHT_CHECK=true >> .env
-          echo APP_ZONE=develop >> .env
+          echo SKIP_PREFLIGHT_CHECK=true >> .env.production
+          echo APP_ZONE=develop >> .env.production
 
       - name: Run ESLint
         run: |
@@ -109,8 +109,8 @@ jobs:
   #       run: |
   #         echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
   #         echo 'always-auth=true' >> .npmrc
-  #         echo SKIP_PREFLIGHT_CHECK=true >> .env
-  #         echo APP_ZONE=develop >> .env
+  #         echo SKIP_PREFLIGHT_CHECK=true >> .env.production
+  #         echo APP_ZONE=develop >> .env.production
 
   #     - name: Setup Node Version
   #       uses: actions/setup-node@v1
@@ -121,8 +121,8 @@ jobs:
   #       run: |
   #         echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
   #         echo 'always-auth=true' >> .npmrc
-  #         echo SKIP_PREFLIGHT_CHECK=true >> .env
-  #         echo APP_ZONE=develop >> .env
+  #         echo SKIP_PREFLIGHT_CHECK=true >> .env.production
+  #         echo APP_ZONE=develop >> .env.production
 
   #     - name: Run Test
   #       run: |
@@ -178,8 +178,8 @@ jobs:
         run: |
           echo '//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' >> .npmrc
           echo 'always-auth=true' >> .npmrc
-          echo SKIP_PREFLIGHT_CHECK=true >> .env
-          echo APP_ZONE=develop >> .env
+          echo SKIP_PREFLIGHT_CHECK=true >> .env.production
+          echo APP_ZONE=develop >> .env.production
 
       - name: Deploy to Surge
         run: |
