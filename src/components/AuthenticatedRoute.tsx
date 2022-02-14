@@ -2,12 +2,13 @@ import { navigate } from 'gatsby';
 import React from 'react';
 import { ROUTES } from 'shared/constants/Routes';
 import { useAppSelector } from 'shared/hooks/useRedux';
+import { isBrowser } from 'shared/utils/LocalStorage';
 
 const AuthenticatedRoute: React.FC = ({ children }) => {
   const isAuth = useAppSelector(state => state.user.isAuth);
 
   if (!isAuth) {
-    navigate(ROUTES.LOGIN);
+    if (isBrowser) navigate(ROUTES.LOGIN);
     return null;
   }
 

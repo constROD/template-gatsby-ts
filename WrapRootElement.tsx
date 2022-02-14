@@ -1,5 +1,5 @@
 import createStore from './src/shared/redux/store';
-import { ThemeProvider, theme, GlobalStyle } from './src/shared/theme';
+import { ThemeProvider, theme } from './src/shared/theme';
 
 import React from 'react';
 import { Provider } from 'react-redux';
@@ -9,10 +9,7 @@ export default ({ element }) => {
 
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {element}
-      </ThemeProvider>
+      <ThemeProvider theme={theme}>{element}</ThemeProvider>
     </Provider>
   );
 };
