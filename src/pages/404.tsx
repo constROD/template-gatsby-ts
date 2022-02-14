@@ -1,8 +1,14 @@
-import { NotFoundPageWrapper } from './404.styled';
-
 import { navigate } from 'gatsby';
 import React from 'react';
 import { ROUTES } from 'shared/constants/Routes';
+import { styled } from 'shared/theme';
+
+const NotFoundPageWrapper = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const NotFoundPage: React.FC = () => {
   return (
