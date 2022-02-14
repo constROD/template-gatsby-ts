@@ -22,7 +22,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":large_orange_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` is now deploying to `production`."
+                    "text": ":large_orange_circle: `base: ${{ env.GIT_BASE_BRANCH }}` <- `head: ${{ env.GIT_HEAD_BRANCH }}` is now deploying to `develop`."
                   }
                 },
                 { "type": "divider" },
