@@ -26,6 +26,7 @@
 /.env.development
 /.env.test
 /.env.production
+/package-lock.json
 
 # Logs
 /*-error.log
