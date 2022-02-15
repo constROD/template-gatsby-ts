@@ -1,4 +1,4 @@
-export const isBrowser: boolean = typeof window !== 'undefined';
+const isBrowser: boolean = typeof window !== 'undefined';
 class LocalStorageUtil {
   static set(key: string, value: unknown): void {
     if (!isBrowser) return;

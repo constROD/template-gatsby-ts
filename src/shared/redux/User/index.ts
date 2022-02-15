@@ -2,7 +2,9 @@ import { userLoginAsync, userLogoutAsync } from './Thunks';
 import { IUserState } from './Types';
 
 import { createSlice } from '@reduxjs/toolkit';
+import { navigate } from 'gatsby';
 import { AuthLocalStorage } from 'shared/constants/LocalStorage';
+import { ROUTES } from 'shared/constants/Routes';
 import LocalStorageUtil from 'shared/utils/LocalStorage';
 
 const INITIAL_STATE: IUserState = {
@@ -20,6 +22,7 @@ const userSlice = createSlice({
         if (isAuth) {
           state.isAuth = isAuth;
           LocalStorageUtil.set(AuthLocalStorage.IsAuth, isAuth);
+          navigate(ROUTES.HOME);
         }
       }
     });
@@ -28,6 +31,7 @@ const userSlice = createSlice({
       if (!action.payload.error) {
         state.isAuth = false;
         LocalStorageUtil.clear();
+        navigate(ROUTES.LOGIN);
       }
     });
   },
