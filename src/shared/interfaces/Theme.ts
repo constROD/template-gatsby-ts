@@ -1,5 +1,6 @@
 export interface IColorTheme {
   red100: string;
+  blue100: string;
 }
 
 export interface IScreenTheme {
