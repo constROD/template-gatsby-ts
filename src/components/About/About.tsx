@@ -1,7 +1,9 @@
 import { AboutWrapper } from './About.styled';
 
+import { navigate } from 'gatsby';
 import React from 'react';
 import { useAsyncFn } from 'react-use';
+import { ROUTES } from 'shared/constants/Routes';
 import UserActions from 'shared/redux/User/Actions';
 
 const About: React.FC = () => {
@@ -10,10 +12,10 @@ const About: React.FC = () => {
   const [, logoutAsync] = useAsyncFn(async () => {
     const { error } = await logout();
 
-    if (error) {
-      // eslint-disable-next-line no-console
-      console.log('logout: ', error);
-    }
+    if (!error) return navigate(ROUTES.LOGIN);
+
+    // eslint-disable-next-line no-console
+    console.log('logout: ', error);
   });
 
   return (
