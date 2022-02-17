@@ -1,4 +1,4 @@
-import Layout from './src/components/Layout';
+import Root from './src/components/Root';
 import { GlobalStyle } from './src/shared/theme';
 
 import React from 'react';
@@ -7,7 +7,7 @@ export default ({ element, props }) => {
   return (
     <React.Fragment>
       <GlobalStyle />
-      <Layout {...props}>{element}</Layout>
+      <Root {...props}>{element}</Root>
     </React.Fragment>
   );
 };
