@@ -5,12 +5,12 @@ import { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import { useAsyncFn } from 'react-use';
 import {
   ICheckboxRadio,
-  IErrorValidator,
   IForm,
   IFormElements,
   IFormHandle,
   IFormReturn,
 } from 'shared/interfaces/Form';
+import { IValidatorError } from 'shared/interfaces/Validator';
 
 /*
 	Parameters:
@@ -29,7 +29,7 @@ import {
 		}
 
 	Returns:
-		interface IErrorValidator {
+		interface IValidatorResponse {
 			id: string,
 			message: string
 		}
@@ -125,7 +125,7 @@ export const useForm = <T>(options: IForm<T>): IFormReturn<T> => {
     ...options,
   };
   const [state, setState] = useState(defaultValues);
-  const [errors, setErrors] = useState<IErrorValidator[] | null>(null);
+  const [errors, setErrors] = useState<IValidatorError[] | undefined>(undefined);
   const run = useRef(false);
 
   const handle = useMemo(
@@ -201,7 +201,10 @@ export const useForm = <T>(options: IForm<T>): IFormReturn<T> => {
 
   const [, validatorAsync] = useAsyncFn(async (...args: [T]) => {
     const [values] = args;
-    if (validator) setErrors(await validator(values));
+    if (validator) {
+      const { error } = await validator(values);
+      setErrors(error);
+    }
   });
 
   useEffect(() => {

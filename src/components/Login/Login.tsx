@@ -19,7 +19,7 @@ const Login: React.FC = () => {
     []
   );
 
-  const { values, handle } = useForm<ILoginForm>({
+  const { values, errors, handle } = useForm<ILoginForm>({
     defaultValues,
     validator: loginValidator,
   });
@@ -48,6 +48,8 @@ const Login: React.FC = () => {
 
   // eslint-disable-next-line no-console
   console.log('values: ', values);
+  // eslint-disable-next-line no-console
+  console.log('errors: ', errors);
 
   return (
     <LoginWrapper>
