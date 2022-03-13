@@ -21,12 +21,12 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "eslint src --ext .js,.ts,.jsx,.tsx",
-    "lint:fix": "eslint src --fix --ext .js,.ts,.jsx,.tsx",
+    "format": "prettier --write ./src/**/*.ts{,x}",
+    "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
+    "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx",
     "pre-commit": "lint-staged --allow-empty",
     "prepare": "husky install",
-    "git:develop": "git checkout develop && git pull origin develop && git branch | grep -v \"main\\|develop\" | xargs git branch -D"
+    "git:develop": "git checkout develop && git pull origin develop && git branch | grep -v \"main\\|staging\\|develop\" | xargs git branch -D"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
