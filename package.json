@@ -15,9 +15,9 @@
   "author": "Rodrick Alcantara <rialcantara21@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
