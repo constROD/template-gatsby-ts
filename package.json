@@ -16,17 +16,17 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn clean && node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js develop",
-    "start": "yarn build && gatsby serve",
-    "build": "yarn clean && node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js build",
-    "analyze": "yarn build && source-map-explorer ./public/**/*.js",
     "clean": "gatsby clean",
+    "build": "yarn clean && node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js build",
+    "start": "yarn build && gatsby serve",
     "test": "jest",
+    "analyze": "yarn build && source-map-explorer ./public/**/*.js",
     "format": "prettier --write ./src/**/*.ts{,x}",
     "lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint ./src --fix --ext .js,.ts,.jsx,.tsx",
+    "git:develop": "git checkout develop && git pull origin develop && git branch | grep -v \"main\\|staging\\|develop\" | xargs git branch -D",
     "pre-commit": "lint-staged --allow-empty",
-    "prepare": "husky install",
-    "git:develop": "git checkout develop && git pull origin develop && git branch | grep -v \"main\\|staging\\|develop\" | xargs git branch -D"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
