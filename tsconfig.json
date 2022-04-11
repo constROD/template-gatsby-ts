@@ -30,5 +30,5 @@
     "./__snapshots__",
     "./jest.setup.ts"
   ],
-  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./custom.d.ts"]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./global.d.ts"]
 }
