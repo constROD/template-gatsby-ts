@@ -6,7 +6,6 @@
 
 # Caches
 /.eslintcache
-/.vscode
 /.cache
 
 # Testings
