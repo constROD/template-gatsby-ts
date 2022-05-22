@@ -7,11 +7,13 @@ import { ROUTES } from 'shared/constants/Routes';
 import { useForm } from 'shared/hooks/useForm';
 import { ILoginForm } from 'shared/interfaces/Auth';
 import { IFormElements } from 'shared/interfaces/Form';
-import UserActions from 'shared/redux/User/Actions';
+import useAppStore from 'shared/store';
 import CommonUtil from 'shared/utils/Common';
 import { loginValidator } from 'shared/validators/Login';
 
 const Login: React.FC = () => {
+  const login = useAppStore(state => state.login);
+
   const defaultValues: ILoginForm = {
     email: '',
     password: '',
@@ -28,12 +30,10 @@ const Login: React.FC = () => {
     handle({ event });
   });
 
-  const { login } = UserActions();
-
   const [, loginAsync] = useAsyncFn(async (...args: [ILoginForm]) => {
-    const [form] = args;
+    const [] = args;
 
-    const { error } = await login(form);
+    const { error } = login();
 
     if (!error) return navigate(ROUTES.HOME);
 

@@ -4,14 +4,14 @@ import { navigate } from 'gatsby';
 import React from 'react';
 import { useAsyncFn } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
-import UserActions from 'shared/redux/User/Actions';
+import useAppStore from 'shared/store';
 import CommonUtil from 'shared/utils/Common';
 
 const Home: React.FC = () => {
-  const { logout } = UserActions();
+  const logout = useAppStore(state => state.logout);
 
   const [, logoutAsync] = useAsyncFn(async () => {
-    const { error } = await logout();
+    const { error } = logout();
 
     if (!error) return navigate(ROUTES.LOGIN);
 

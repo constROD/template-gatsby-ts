@@ -3,10 +3,10 @@ import { navigate } from 'gatsby';
 import React from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
-import { useAppSelector } from 'shared/hooks/useRedux';
+import useAppStore from 'shared/store';
 
 const IndexPage: React.FC = () => {
-  const isAuth = useAppSelector(state => state.user.isAuth);
+  const isAuth = useAppStore(state => state.isAuth);
 
   useEffectOnce(() => {
     if (isAuth) navigate(ROUTES.HOME);
