@@ -2,13 +2,13 @@ import { navigate } from 'gatsby';
 import React from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
-import useAppStore from 'shared/store';
+import { useUserStore } from 'shared/store';
 
 const AuthenticatedRoute: React.FC = ({ children }) => {
-  const isAuth = useAppStore(state => state.isAuth);
+  const { isSignedIn } = useUserStore(state => state.computed);
 
   useEffectOnce(() => {
-    if (!isAuth) navigate(ROUTES.LOGIN);
+    if (!isSignedIn) navigate(ROUTES.LOGIN);
     // if (!LocalStorageUtil.get(AppLocalStorage.HostName)) {
     //   const protocol = window.location.protocol;
     //   const host = window.location.host;
@@ -18,13 +18,13 @@ const AuthenticatedRoute: React.FC = ({ children }) => {
   });
 
   // useEffect(() => {
-  //   if (run.current && isAuth && !profile) {
+  //   if (run.current && isSignedIn && !profile) {
   //     getAllInfo();
   //     run.current = false;
   //   }
-  // }, [getAllInfo, isAuth, profile]);
+  // }, [getAllInfo, isSignedIn, profile]);
 
-  if (!isAuth) return null;
+  if (!isSignedIn) return null;
 
   return <React.Fragment>{children}</React.Fragment>;
 };

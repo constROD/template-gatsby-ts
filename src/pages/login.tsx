@@ -3,16 +3,16 @@ import { navigate } from 'gatsby';
 import React from 'react';
 import { useEffectOnce } from 'react-use';
 import { ROUTES } from 'shared/constants/Routes';
-import useAppStore from 'shared/store';
+import { useUserStore } from 'shared/store';
 
 const IndexPage: React.FC = () => {
-  const isAuth = useAppStore(state => state.isAuth);
+  const { isSignedIn } = useUserStore(state => state.computed);
 
   useEffectOnce(() => {
-    if (isAuth) navigate(ROUTES.HOME);
+    if (isSignedIn) navigate(ROUTES.HOME);
   });
 
-  if (isAuth) return null;
+  if (isSignedIn) return null;
 
   return <Login />;
 };
