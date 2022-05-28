@@ -10,6 +10,7 @@ WORKDIR /app
 COPY gatsby-browser.js gatsby-browser.js
 COPY gatsby-config.js gatsby-config.js
 COPY gatsby-ssr.js gatsby-ssr.js
+COPY WrapPageElement.tsx WrapPageElement.tsx
 COPY WrapRootElement.tsx WrapRootElement.tsx
 COPY tsconfig.json tsconfig.json
 COPY package.json package.json
