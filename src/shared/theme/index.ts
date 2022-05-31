@@ -23,14 +23,10 @@ export const ThemeProvider = SThemeProvider;
 export const styled = defaultStyled as ThemedStyledInterface<ITheme>;
 export const GlobalStyle = createGlobalStyle`
   html, body {
-    background: #FAFDFF;
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
   }
 
   #___gatsby, #gatsby-focus-wrapper {
@@ -40,5 +36,10 @@ export const GlobalStyle = createGlobalStyle`
   
   *, *::before, *::after {
     box-sizing: border-box;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
   }
 `;
