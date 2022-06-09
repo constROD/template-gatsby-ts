@@ -1,24 +1,32 @@
-import { IColorTheme, IScreenTheme, ITheme } from 'shared/interfaces/Theme';
+import { IColorTheme, IScreenTheme, ITheme } from '../interfaces/Theme';
+
 import defaultStyled, {
   createGlobalStyle,
   ThemedStyledInterface,
   ThemeProvider as SThemeProvider,
 } from 'styled-components';
 
-const colors: IColorTheme = {
+const themeColors: IColorTheme = {
   red100: 'red',
-  blue100: 'blue',
 };
 
-const screens: IScreenTheme = {
-  bpSmall: '576px',
-  bpMedium: '768px',
-  bpLarge: '992px',
-  bpXlarge: '1200px',
-  bpXXlarge: '1920px',
+const themeScreens: IScreenTheme = {
+  xSmall: 375,
+  small: 576,
+  medium: 768,
+  large: 992,
+  xLarge: 1200,
+  xSmallMedia: '@media (min-width: 375px)',
+  smallMedia: '@media (min-width: 576px)',
+  mediumMedia: '@media (min-width: 768px)',
+  largeMedia: '@media (min-width: 992px)',
+  xLargeMedia: '@media (min-width: 1200px)',
 };
 
-export const theme = (): ITheme => ({ colors, screens });
+export const colors = themeColors;
+export const screens = themeScreens;
+
+export const theme = (): ITheme => ({ colors: themeColors, screens: themeScreens });
 export const ThemeProvider = SThemeProvider;
 export const styled = defaultStyled as ThemedStyledInterface<ITheme>;
 export const GlobalStyle = createGlobalStyle`
