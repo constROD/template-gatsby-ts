@@ -1,8 +1,6 @@
 import { styled } from 'shared/theme';
 
-export const AboutWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.red100};
-
+export const FooterWrapper = styled.div`
   .content {
     width: 100%;
     margin: 0 auto;

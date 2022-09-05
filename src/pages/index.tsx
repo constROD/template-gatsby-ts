@@ -1,15 +1,12 @@
-import AuthenticatedRoute from 'components/AuthenticatedRoute';
 import Home from 'components/Home/Home';
-import Layout from 'components/Layout';
 import React from 'react';
+import PageLayout from 'shared/components/Layouts/PageLayout';
 
 const HomePage: React.FC = () => {
   return (
-    <AuthenticatedRoute>
-      <Layout>
-        <Home />
-      </Layout>
-    </AuthenticatedRoute>
+    <PageLayout>
+      <Home />
+    </PageLayout>
   );
 };
 

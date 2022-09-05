@@ -15,6 +15,7 @@
   "author": "Rodrick Alcantara <rialcantara21@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "setup": "cat .nvmrc | xargs nvm use",
     "dev": "yarn clean && node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js develop",
     "clean": "gatsby clean",
     "build": "yarn clean && node --max-old-space-size=4096 ./node_modules/gatsby/dist/bin/gatsby.js build",

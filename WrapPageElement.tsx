@@ -1,4 +1,4 @@
-import Root from './src/components/Root';
+import Root from './src/shared/components/Layouts/RootLayout';
 import { GlobalStyle } from './src/shared/theme';
 
 import React from 'react';

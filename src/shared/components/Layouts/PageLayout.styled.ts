@@ -1,31 +1,21 @@
 import { styled } from 'shared/theme';
 
-export const AboutWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.red100};
-
-  .content {
-    width: 100%;
-    margin: 0 auto;
-  }
+export const PageLayoutWrapper = styled.div`
+  // Default Mobile
 
   ${({ theme }) => theme.screens.xSmallMedia} {
-    .content {
-    }
+    // Mobile 375px
   }
   ${({ theme }) => theme.screens.smallMedia} {
-    .content {
-    }
+    // Mobile 576px
   }
   ${({ theme }) => theme.screens.mediumMedia} {
-    .content {
-    }
+    // Tablet 768px
   }
   ${({ theme }) => theme.screens.largeMedia} {
-    .content {
-    }
+    // Desktop 992px
   }
   ${({ theme }) => theme.screens.xLargeMedia} {
-    .content {
-    }
+    // Desktop 1200px
   }
 `;

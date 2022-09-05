@@ -24,7 +24,9 @@ const About: React.FC = () => {
 
   return (
     <AboutWrapper>
-      This is AboutPage. <button onClick={logoutAsync}>Logout</button>
+      <div className="content">
+        This is AboutPage. <button onClick={logoutAsync}>Logout</button>
+      </div>
     </AboutWrapper>
   );
 };
