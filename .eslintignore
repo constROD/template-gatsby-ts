@@ -3,6 +3,8 @@ node_modules
 
 # Configs
 commitlint.config.js
+postcss.config.js
+tailwind.config.js
 jest.*.ts
 Dockerfile
 gatsby-config.js
