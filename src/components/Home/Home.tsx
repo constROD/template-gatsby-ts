@@ -24,9 +24,7 @@ const Home: React.FC = () => {
 
   return (
     <HomeWrapper>
-      <div className="content">
-        This is HomePage. <button onClick={logoutAsync}>Logout</button>
-      </div>
+      This is HomePage. <button onClick={logoutAsync}>Logout</button>
     </HomeWrapper>
   );
 };
