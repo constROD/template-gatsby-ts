@@ -1,5 +1,9 @@
 FROM node:17-alpine3.14 AS builder
 
+# Environment Variables
+ARG APP_ENV
+ENV APP_ENV=${APP_ENV}
+
 # Create /app folder and add permission on the /app folder.
 RUN mkdir -p /app && chmod -R 775 /app
 
@@ -14,9 +18,11 @@ COPY WrapPageElement.tsx WrapPageElement.tsx
 COPY WrapRootElement.tsx WrapRootElement.tsx
 COPY tsconfig.json tsconfig.json
 COPY package.json package.json
+COPY yarn.lock yarn.lock
 COPY src src
 
 # Install dependencies and build the application.
+RUN echo ${APP_ENV} | base64 -d >.env
 RUN yarn && yarn build
 
 FROM nginx:1.19.6-alpine
